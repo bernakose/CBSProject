@@ -1,0 +1,132 @@
+﻿<!-- Menu header start -->
+@*@{
+    var info = "hidden";
+    var clearmap = "hidden";
+    var pan = "hidden";
+
+    foreach (var menuGroup in Alb.Web.UI.Helpers.UserHelper.GetUserMenus())
+    {
+        if (menuGroup.Childs != null && menuGroup.Childs.Count > 0)
+        {
+            if (menuGroup.MenuName == "Tools")
+            {
+                foreach (var menu in menuGroup.Childs)
+                {
+                    if (menu.CallFunctionName == "PanControl")
+                    {
+                        pan = "";
+                    }
+                    if (menu.CallFunctionName == "ClearMap")
+                    {
+                        clearmap = "";
+                    }
+                    if (menu.CallFunctionName == "ActivateInfo")
+                    {
+                        info = "";
+                    }
+                }
+
+            }
+        }
+
+    }
+}*@
+<nav class="navbar header-navbar pcoded-header" id="TcddNavbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-logo">
+            <a class="mobile-menu" id="mobile-collapse" href="#!">
+                <i class="feather icon-menu"></i>
+            </a>
+            <a href="@Url.Action("Index","Home")">
+                <img class="img-fluid" src="@Url.Content("~/images/tcdd-2.jpg")" alt="Theme-Logo">
+            </a>
+            <a class="mobile-options">
+                <i class="feather icon-more-horizontal"></i>
+            </a>
+        </div>
+        <div class="navbar-container container-fluid">
+            <ul class="nav-right">
+
+                @*<li class="header-notification header-button" @pan>
+                    <div class="card-block icon-btn" style="padding:0;">
+
+                        <a href="#" name="albMenuItem" data-menu-id="10,0" data-call-function-name="PanControl" data-is-query-window="False" data-menu-name="Pan" data-query-service-name="" data-query-table-name="" data-query-uniq-column-name="" data-query-uniq-field-name="" style="padding: 0;">
+                            <button class="btn btn-success btn-icon" type="button" data-call-function-name="PanControl" style="width: 30px;height: 30px;padding: 0px;">
+                                <i class="icofont icofont-hand" style="font-size: 17px;"></i>
+                            </button>
+                        </a>
+                    </div>
+                </li>
+                <li class="header-notification header-button" @clearmap>
+                    <div class="card-block icon-btn" style="padding:0;">
+                        <a href="#" name="albMenuItem" data-menu-id="25,0" data-call-function-name="ClearMap" data-is-query-window="False" data-menu-name="Clear Map" data-query-service-name="" data-query-table-name="" data-query-uniq-column-name="" data-query-uniq-field-name="" style="padding: 0;">
+                            <button class="btn btn-danger btn-icon" type="button" data-call-function-name="ClearMap" style="width: 30px;height: 30px;padding: 0px;">
+                                <i class="icofont icofont-ui-delete" style="font-size: 17px;"></i>
+                            </button>
+                        </a>
+
+                    </div>
+                </li>
+                <li class="header-notification header-button" @info>
+                    <div class="card-block icon-btn" style="padding:0;">
+                        <a href="#" name="albMenuItem" data-menu-id="12,0" data-call-function-name="ActivateInfo" data-is-query-window="False" data-menu-name="Info" data-query-service-name="" data-query-table-name="" data-query-uniq-column-name="" data-query-uniq-field-name="" style="padding: 0;">
+                            <button class="btn btn-info btn-icon" type="button" data-call-function-name="ActivateInfo" style="width: 30px;height: 30px;padding: 0px;">
+                                <i class="icofont icofont-info-circle" style="font-size: 17px;"></i>
+                            </button>
+                        </a>
+
+                    </div>
+                </li>*@
+                <li class="header-notification header-button">
+                    <div class="dropdown-primary dropdown">
+                        <div class="displayChatbox dropdown-toggle" data-toggle="dropdown">
+                            <i class="icofont icofont-layers icofont-1-5x"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="user-profile header-notification">
+                    <div class="dropdown-primary dropdown">
+                        <div class="dropdown-toggle" data-toggle="dropdown">
+                            <span id="spnUserDisplayName">@string.Format("{0} {1}", Cbs.Web.UI.Helpers.UserHelper.GetUser().Name, Cbs.Web.UI.Helpers.UserHelper.GetUser().Surname)</span>
+                            <img src="@Cbs.Web.UI.Helpers.UserHelper.GetUserAvatar(Cbs.Web.UI.Helpers.UserHelper.GetUser().Id)" class="img-radius" alt="User-Profile-Image" id="imgNavbarProfile">
+                            <i class="feather icon-chevron-down"></i>
+                        </div>
+                        <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            @*<li>
+                        <a href="#!">
+                            <i class="feather icon-settings"></i> Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user-profile.htm">
+                            <i class="feather icon-user"></i> Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="email-inbox.htm">
+                            <i class="feather icon-mail"></i> My Messages
+                        </a>
+                    </li>*@
+                            <li>
+                                <a href="#" id="btnShowProfileInfo">
+                                    <i class="feather icon-user"></i> Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="btnSaveWorkpsace">
+                                    <i class="feather icon-save"></i> Save Workspace
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("LogOut","Login")">
+                                    <i class="feather icon-log-out"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,34 @@
+﻿@model Cbs.Web.UI.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@*@Html.Hidden("hdGridSearchs", Newtonsoft.Json.JsonConvert.SerializeObject(Model.GridSearchs))*@
+<div id="map" style="height:1018px;width:100%;background-color:white">
+
+</div>
+<div id="dvProfile" style="display:none">
+    @*@{ Html.RenderPartial("_ProfilePartial");}*@
+</div>
+<div class="form" id="frmChangePassword" style="display:none">
+    <div class="dx-fieldset">
+        <div class="dx-field">
+            <div class="dx-field-label">Password</div>
+            <div class="dx-field-value">
+                <div id="password-validation"></div>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Confirm Password</div>
+            <div class="dx-field-value">
+                <div id="confirm-password-validation"></div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="form-group row">
+        <p class="text-right" style="width:100%;padding-right:20px;">
+            <button class="btn btn-success btn-out-dotted" id="btnChangeUserPassword" type="button">Save</button>
+        </p>
+    </div>
+</div>

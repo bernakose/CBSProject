@@ -1,0 +1,214 @@
+﻿@{
+    string guid = Guid.NewGuid().ToString();
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> @string.Format("{0} | Home | {1}", Cbs.Web.UI.Helpers.AppHelper.ApplicationName, Cbs.Web.UI.Helpers.AppHelper.Version) </title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="CBS">
+    <meta name="keywords" content="GIS, TCDD">
+    <meta name="author" content="TCDD A.Ş.">
+    <!-- Favicon icon -->
+    <link rel="icon" href="@Url.Content("~/images/favicon.ico")" type="image/x-icon">
+    <!-- Google font-->
+    <link href="~/googlefont.css" rel="stylesheet">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/bootstrap/css/bootstrap.min.css")?guid=@guid">
+
+    <!-- jquery file upload Frame work -->
+    <link href="@Url.Content("~/pages/jquery.filer/css/jquery.filer.css")?guid=@guid" type="text/css" rel="stylesheet">
+    <link href="@Url.Content("~/pages/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css")?guid=@guid" type="text/css" rel="stylesheet">
+
+    <!-- DevExtreme themes -->
+    <link rel="stylesheet" href="~/DevXtreme/dx.common.css?guid=@guid">
+    <link rel="stylesheet" href="~/DevXtreme/dx.light.compact.css?guid=@guid">
+
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/icon/themify-icons/themify-icons.css")?guid=@guid">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/icon/icofont/css/icofont.css")?guid=@guid">
+    <!-- feather Awesome -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/icon/feather/css/feather.css")?guid=@guid">
+
+    <!-- Switch component css -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/switchery/css/switchery.min.css")?guid=@guid">
+
+    <!-- Syntax highlighter Prism css -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/pages/prism/prism.css")?guid=@guid">
+
+    <link href="@Url.Content("~/copper/cropper.min.css")?guid=@guid" rel="stylesheet" />
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/style.css")?guid=@guid">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/jquery.mCustomScrollbar.css")?guid=@guid">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/pcoded-horizontal.min.css")?guid=@guid">
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/ol/ol.css")?guid=@guid">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/toastr.min.css")?guid=@guid">
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/js/ol3-contextmenu/ol3-contextmenu.min.css")?guid=@guid">
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Tcdd.css")?guid=@guid">
+
+    <script>
+        var webApiUrl = '@Cbs.Web.UI.Helpers.AppHelper.WebApiUrl';
+        var appUrl = '@Cbs.Web.UI.Helpers.AppHelper.AppUrl';
+        var odataUrl = '@Cbs.Web.UI.Helpers.AppHelper.OdataUrl';
+        var userToken = '@Cbs.Web.UI.Helpers.UserHelper.GetUser().SessionId';
+    </script>
+    <script type="text/javascript" src="~/UserHelper.js"></script>
+    <script src="@Url.Content("~/js/gridstack.js")?guid=@guid"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/jquery/js/jquery.min.js")?guid=@guid"></script>
+    <script type="text/javascript" src="@Url.Content("~/jquery-ui/js/jquery-ui.min.js")?guid=@guid"></script>
+
+    <script>
+        UserHelper.SetUserLanguage('en-US')
+        localStorage.setItem('UserLoginToken', '@Html.Raw(Cbs.Web.UI.Helpers.UserHelper.GetUser().SessionId)')
+        localStorage.setItem('UserId', '@Html.Raw(Cbs.Web.UI.Helpers.UserHelper.GetUser().Id)')
+        localStorage.setItem('UserLayers', '@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Cbs.Web.UI.Helpers.UserHelper.GetUser().UserLayers))')
+        localStorage.setItem('SessionUser','@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Cbs.Web.UI.Helpers.UserHelper.GetUser()))')
+
+    </script>
+
+    <script type="text/javascript" src="~/popper.js/js/popper.min.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/bootstrap/js/bootstrap.min.js?guid=@guid"></script>
+    <!-- jquery slimscroll js -->
+    <script type="text/javascript" src="~/jquery-slimscroll/js/jquery.slimscroll.js?guid=@guid"></script>
+    <!-- modernizr js -->
+    <script type="text/javascript" src="~/modernizr/js/modernizr.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/modernizr/js/css-scrollbars.js?guid=@guid"></script>
+
+    <!-- Syntax highlighter prism js -->
+    <script type="text/javascript" src="~/pages/prism/custom-prism.js?guid=@guid"></script>
+
+    <!-- Accordion js -->
+    <script type="text/javascript" src="~/pages/accordion/accordion.js?guid=@guid"></script>
+
+    <!-- i18next.min.js -->
+    <script type="text/javascript" src="~/i18next/js/i18next.min.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/i18next-xhr-backend/js/i18nextXHRBackend.min.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/jquery-i18next/js/jquery-i18next.min.js?guid=@guid"></script>
+    <!-- Custom js -->
+    <script src="~/js/pcoded.min.js?guid=@guid"></script>
+    <script src="~/js/menu/menu-hori-fixed.js?guid=@guid"></script>
+    <script src="~/js/jquery.mCustomScrollbar.concat.min.js?guid=@guid"></script>
+    @*<script type="text/javascript" src="~/js/script.js"></script>*@
+    <script src="~/assets/js/jquery-ddslick/jquery.ddslick.min.js?guid=@guid"></script>
+    <!-- Switch component js -->
+    <script type="text/javascript" src="@Url.Content("~/switchery/js/switchery.min.js")?guid=@guid"></script>
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="~/jszip.min.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/DevXtreme/dx.all.js?guid=@guid"></script>
+
+    <script type="text/javascript" src="~/copper/cropper.min.js?guid=@guid"></script>
+
+    <script type="text/javascript" src="~/toastr.min.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/ToastrHelper.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/ol/ol.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/ol/BasarsoftMapManager.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/assets/js/ol3-contextmenu/contextmenu.js"></script>
+    <script type="text/javascript" src="~/assets/js/ol3-contextmenu/ol3-contextmenu.js"></script>
+    <script type="text/javascript" src="~/Configuration.js?guid=@guid"></script>
+    <script>
+        var userX = JSON.parse(@Newtonsoft.Json.JsonConvert.SerializeObject(Cbs.Web.UI.Helpers.UserHelper.GetUser().WebCenterX));
+        var userY = JSON.parse(@Newtonsoft.Json.JsonConvert.SerializeObject(Cbs.Web.UI.Helpers.UserHelper.GetUser().WebCenterY));
+        var userZoom = JSON.parse(@Newtonsoft.Json.JsonConvert.SerializeObject(Cbs.Web.UI.Helpers.UserHelper.GetUser().WebZoom));
+
+        if (userX > 0 && userY > 0) {
+            mapCenter = [];
+            mapCenter.push(userX);
+            mapCenter.push(userY);
+        }
+        if (userZoom > 0) {
+            mapZoom = userZoom;
+        }
+    </script>
+    <script type="text/javascript" src="~/QueryHelper.js?guid=@guid"></script>
+    <script type="text/javascript" src="~/TcddMain.js?guid=@guid"></script>
+</head>
+<body>
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pcoded" class="pcoded">
+
+        <div class="pcoded-container">
+           @* @{Html.RenderPartial("_NavbarHeaderPartial");}*@
+            <div class="pcoded-main-container">
+             @*   @{Html.RenderPartial("_MenuPartial");}*@
+
+               @* @{ Html.RenderPartial("_LayerListPartial");}*@
+
+                <div class="pcoded-wrapper">
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                 @*                   @{Html.RenderPartial("_PageHeaderPartial");}*@
+                                    <div class="page-body">
+                                        <div class="menuBaseLayerList">
+                                            <div class="titleBaseLayerList" onclick="baseLayerClicker()">
+                                                <div id="selectedBaseLayerId" style="margin-bottom:5px;"></div>
+                                                <div class="arrowBaseLayerList"></div>
+                                            </div>
+                                            <div class="dropdownBaseLayerList">
+                                            </div>
+                                        </div>
+                                        <div id="baseLayerControl"></div>
+
+                                        @RenderBody()
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*Tab Panel & FileManager Start*@
+
+    <script type="text/html" id="custom-tab-content">
+        <div class="tabpanel-item">
+            <div>
+
+            </div>
+        </div>
+    </script>
+
+    @*Tab Panel & FileManager End*@
+
+
+</body>
+</html>

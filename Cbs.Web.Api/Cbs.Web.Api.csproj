@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Berna\source\repos\CBSProject\Cbs.Web.Api\Cbs.Web.Api.xml</DocumentationFile>
+    <OutputPath>bin\Debug\netcoreapp3.0</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="8.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.2.50" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cbs.Core\Cbs.Core.csproj" />
+    <ProjectReference Include="..\Cbs.Data\Cbs.Data.csproj" />
+    <ProjectReference Include="..\Cbs.Web.UI\Cbs.Web.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="VYS.CacheManager.Core">
+      <HintPath>..\..\cbs kurulumlar ve dosyalar\VYS.CacheManager.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="VYS.CacheManager.Redis">
+      <HintPath>..\..\cbs kurulumlar ve dosyalar\VYS.CacheManager.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="VYS.UtilsStandart">
+      <HintPath>..\..\cbs kurulumlar ve dosyalar\VYS.UtilsStandart.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

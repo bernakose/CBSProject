@@ -1,0 +1,123 @@
+﻿<div class="row simple-cards users-card">
+    <div class="col-md-12 col-xl-4">
+        <div class="card user-card" style="height:433px;">
+            <div class="card-header-img">
+                <img class="img-fluid img-radius img-change" id="userProfileImage" src="" alt="card-img" height="200" width="200" onclick="EditProfileImage()">
+
+                <h4 id="userDisplayName"></h4>
+                <h5 id="userUsername"></h5>
+                <h5><a href="#" class="__cf_email__" data-cfemail="9afbf8f9aba8a9dafef5f7fbf3f4b4f9f5f7" id="userMailAddress">[]</a></h5>
+                <h6 id="userTitle"></h6>
+            </div>
+            <div style="position:absolute;bottom:5px;padding-left:7px;">
+                <button type="button" class="btn btn-success waves-effect waves-light" onclick="EditProfileInfo()"><i class="icofont icofont-edit m-r-5"></i>Edit</button>
+                <button type="button" class="btn btn-primary waves-effect waves-light m-r-15 m-l-15" onclick="ChangePassword()"><i class="icofont icofont-ui-password m-r-5"></i>Change Password</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-8">
+        <div class="card">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12">
+                        <ul class="nav nav-tabs md-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#profileOperation" role="tab">Operation Logs</a>
+                                <div class="slide"></div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#profileLoginLogout" role="tab">Login Logouts</a>
+                                <div class="slide"></div>
+                            </li>
+                        </ul>
+                        <div class="tab-content card-block">
+                            <div class="tab-pane active" id="profileOperation" role="tabpanel">
+                                <table id="dtProfileOperationLogs"></table>
+                            </div>
+                            <div class="tab-pane" id="profileLoginLogout" role="tabpanel">
+                                <table id="dtProfileLoginLogout"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvProfileImageChange" style="display:none">
+    <div id="profimagerow" class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Choose Image</h5>
+                </div>
+                <div class="card-block">
+                    <input type="file" name="files[]" id="filer_inputProfileImage" multiple="" style="display:none">
+                    <div class="jFiler-input-dragDrop">
+                        <div class="jFiler-input-inner">
+                            <div class="jFiler-input-icon">
+                                <i class="icon-jfi-cloud-up-o"></i>
+                            </div>
+                            <div class="jFiler-input-text">
+                            </div>
+                            <a class="jFiler-input-choose-btn btn btn-primary waves-effect waves-light" onclick="$('#filer_inputProfileImage').trigger('click')">Browse File</a>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="text-center block">
+                        <button type="button" class="btn btn-info waves-effect waves-light" id="btnSaveCropedProfileImage"><i class="icofont icofont-save m-r-5"></i>Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Crop Image</h5>
+                </div>
+                <div class="card-block">
+                    <img src="" id="imgProfilePicEdit" class="img-thumbnail" width="225" height="225" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="dvChangeProfileInfo">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <div class="form-group row">
+                        <label for="txtPrfUsername" class="col-lg-4 col-sm-12 col-form-label">Username</label>
+                        <div class="col-sm-12 col-lg-8">
+                            <div id="txtPrfUsername"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtPrfName" class="col-lg-4 col-sm-12 col-form-label">Name</label>
+                        <div class="col-sm-12 col-lg-8">
+                            <div id="txtPrfName"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtPrfSurname" class="col-lg-4 col-sm-12 col-form-label">Surname</label>
+                        <div class="col-sm-12 col-lg-8">
+                            <div id="txtPrfSurname"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtPrfEMail" class="col-lg-4 col-sm-12 col-form-label">E-Mail</label>
+                        <div class="col-sm-12 col-lg-8">
+                            <div id="txtPrfEMail"></div>
+                        </div>
+                    </div>
+                    <p class="text-right">
+                        <button class="btn btn-success btn-out-dotted" id="btnPrfSave" type="button">Save</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

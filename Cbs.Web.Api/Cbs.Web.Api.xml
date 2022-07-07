@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cbs.Web.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Cbs.Web.Api.Controllers.FileController.UploadFile(Cbs.Data.Models.Application.FileModel)">
+            <summary>
+            Katmanlara dosya yüklemek için kullanılmaktadır.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.FileController.GetFiles(System.String,System.Int64)">
+            <summary>
+            Katmanlara ait dosyaları getirmek için kullanılmaktadır.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.FileController.DeleteFile(System.Int64)">
+            <summary>
+            Katmanlara ait dosyayı silmek için kullanılmaktadır.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.FileController.GetFilesWithModel(System.String,System.Int64)">
+            <summary>
+            Katmanlara ait dosyaları getirmek için kullanılmaktadır.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.FileController.FileUpload(System.String,System.String,System.String,System.String)">
+            <summary>
+            Web uygulamasından dosya yüklenirken kullanılır, request içindeki dosyaları parametrede gönderilen bilgilerle kaydeder.
+            </summary>
+            <param name="layerName"></param>
+            <param name="recordId"></param>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.LayerController.GetBaseLayers">
+            <summary>
+            Returning Base Layers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.LayerController.GetBaseLayers(System.String)">
+            <summary>
+            Returning Base Layers With Language Key
+            </summary>
+            <param name="languageKey"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cbs.Web.Api.Controllers.MapController">
+            <summary>
+            Spatial Map Operations
+            </summary>
+        </member>
+        <member name="T:Cbs.Web.Api.Controllers.UserController">
+            <summary>
+            User Operations
+            </summary>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.UserController.Login(Cbs.Data.Models.RequestModels.LoginRequestModel)">
+            <summary>
+            Login To System
+            </summary>
+            <param name="requestModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.UserController.GetDomainUsers">
+            <summary>
+            Domain kullanıcılarını listeler
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.UserController.GetSessionUser">
+            <summary>
+            Get User Information with Authentication
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.UserController.LogOff">
+            <summary>
+            Log Off to session user
+            </summary>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.UserController.DeleteUser(System.Decimal)">
+            <summary>
+            Delete User
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cbs.Web.Api.Controllers.UserController.ChangePassword(System.String)">
+            <summary>
+            Change Password
+            </summary>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

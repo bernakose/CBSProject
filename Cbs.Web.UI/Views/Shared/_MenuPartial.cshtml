@@ -1,0 +1,129 @@
+﻿<nav class="pcoded-navbar" id="TcddMenu">
+    <div class="pcoded-inner-navbar">
+        <ul class="pcoded-item pcoded-left-item">
+            @*@foreach (var menuGroup in Cbs.Web.UI.Helpers.UserHelper.GetUserMenus())
+            {
+                if (menuGroup.Childs != null && menuGroup.Childs.Count > 0)
+                {
+                        <li class="pcoded-hasmenu">
+                            <a href="javascript:void(0)">
+                                <span class="pcoded-micon"><i class="@menuGroup.MenuIcon"></i></span>
+                                <span class="pcoded-mtext">@string.Format("{0}", menuGroup.MenuName)</span>
+                                <span class="pcoded-mcaret"></span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                @if (menuGroup.Id == 2)
+                                {
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)">
+                                            <span class="pcoded-micon"><i class="@menuGroup.MenuIcon"></i></span>
+                                            <span class="pcoded-mtext">@string.Format("{0}", "Spot Duck")</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            @foreach (var menu in menuGroup.Childs.Where(a => a.MenuIcon == "spotduck").OrderBy(a => a.MenuName))
+                                            {
+
+                                                <li class="">
+                                                    <a href="#" name="albMenuItem" data-menu-id="@menu.Id"
+                                                       data-call-function-name="@menu.CallFunctionName"
+                                                       data-is-query-window="@menu.IsQueryWindow"
+                                                       data-menu-name="@menu.MenuName"
+                                                       data-query-service-name="@menu.QueryServiceName"
+                                                       data-query-table-name="@menu.QueryTableName"
+                                                       data-query-uniq-column-name="@menu.QueryUniqColumnName"
+                                                       data-query-uniq-field-name="@menu.QueryUniqFieldName">
+                                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                        <span class="pcoded-mtext">@string.Format("{0}", menu.MenuName)</span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)">
+                                            <span class="pcoded-micon"><i class="@menuGroup.MenuIcon"></i></span>
+                                            <span class="pcoded-mtext">@string.Format("{0}", "Copper")</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            @foreach (var menu in menuGroup.Childs.Where(a => a.MenuIcon == "copper").OrderBy(a => a.MenuName))
+                                            {
+
+                                                <li class="">
+                                                    <a href="#" name="albMenuItem" data-menu-id="@menu.Id"
+                                                       data-call-function-name="@menu.CallFunctionName"
+                                                       data-is-query-window="@menu.IsQueryWindow"
+                                                       data-menu-name="@menu.MenuName"
+                                                       data-query-service-name="@menu.QueryServiceName"
+                                                       data-query-table-name="@menu.QueryTableName"
+                                                       data-query-uniq-column-name="@menu.QueryUniqColumnName"
+                                                       data-query-uniq-field-name="@menu.QueryUniqFieldName">
+                                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                        <span class="pcoded-mtext">@string.Format("{0}", menu.MenuName)</span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    <li class="pcoded-hasmenu">
+                                        <a href="javascript:void(0)">
+                                            <span class="pcoded-micon"><i class="@menuGroup.MenuIcon"></i></span>
+                                            <span class="pcoded-mtext">@string.Format("{0}", "Fiber")</span>
+                                            <span class="pcoded-mcaret"></span>
+                                        </a>
+                                        <ul class="pcoded-submenu">
+                                            @foreach (var menu in menuGroup.Childs.Where(a => a.MenuIcon == "fiber").OrderBy(a => a.MenuName))
+                                            {
+
+                                                <li class="">
+                                                    <a href="#" name="albMenuItem" data-menu-id="@menu.Id"
+                                                       data-call-function-name="@menu.CallFunctionName"
+                                                       data-is-query-window="@menu.IsQueryWindow"
+                                                       data-menu-name="@menu.MenuName"
+                                                       data-query-service-name="@menu.QueryServiceName"
+                                                       data-query-table-name="@menu.QueryTableName"
+                                                       data-query-uniq-column-name="@menu.QueryUniqColumnName"
+                                                       data-query-uniq-field-name="@menu.QueryUniqFieldName">
+                                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                        <span class="pcoded-mtext">@string.Format("{0}", menu.MenuName)</span>
+                                                    </a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+                                else
+                                {
+                                    @foreach (var menu in menuGroup.Childs.OrderBy(a => a.MenuName))
+                                    {
+
+                                        <li class="">
+                                            <a href="#" name="albMenuItem" data-menu-id="@menu.Id"
+                                               data-call-function-name="@menu.CallFunctionName"
+                                               data-is-query-window="@menu.IsQueryWindow"
+                                               data-menu-name="@menu.MenuName"
+                                               data-query-service-name="@menu.QueryServiceName"
+                                               data-query-table-name="@menu.QueryTableName"
+                                               data-query-uniq-column-name="@menu.QueryUniqColumnName"
+                                               data-query-uniq-field-name="@menu.QueryUniqFieldName">
+                                                <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i></span>
+                                                <span class="pcoded-mtext">@string.Format("{0}", menu.MenuName)</span>
+                                            </a>
+                                        </li>
+
+                                    }
+
+                                }
+
+                            </ul>
+                        </li>
+                }
+                else
+                {
+
+                }
+            }*@
+        </ul>
+    </div>
+</nav>

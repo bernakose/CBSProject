@@ -1,0 +1,64 @@
+﻿<!-- Sidebar chat start -->
+<div id="sidebar" class="users p-chat-user showChat">
+    <div class="had-container">
+        <div class="card card_main p-fixed users-main card-block accordion-block" style="overflow-y: auto; padding-bottom:7%">
+            <div class="accordion-box" id="single-open">
+                @*@foreach (var item in Cbs.Web.UI.Helpers.UserHelper.GetUser().UserLayers.OrderBy(a=>a.GroupName))
+                {
+                    <a class="accordion-msg">
+                        <label>@item.GroupName</label>
+                    </a>
+                    <div class="accordion-desc">
+                        <div name="dxLayerOrder" data-group-key="@item.GroupKey"></div>
+                    </div>
+                }*@
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sidebar" class="infoLayers p-chat-user showInfoLayers">
+    <div class="had-container">
+        <div class="card card_main p-fixed users-main card-block accordion-block" style="overflow-y: auto;">
+            <div class="accordion-box" id="single-open">
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-sm-9" style="padding-left:30px;">
+                        <span class="pcoded-micon"><i class="icofont icofont-info-square"></i></span>
+                        <span class="pcoded-mtext"> Info Layers</span>
+                    </div>
+                    <div class="col-sm-3 text-right">
+                        <span class="pcoded-badge label label-inverse-danger info-close-btn" id="btnCloseInfoLayer"><i class="feather icon-close">X</i></span>
+                    </div>
+                </div>
+
+                <hr />
+                <ul style="padding-left:20px;" id="infoLayerList">
+                    @*<li class="info-list-item" onclick=""><i class="ti-hand-point-right"></i> Abc</li>
+                        <li class="info-list-item"><i class="ti-hand-point-right"></i> xyz</li>*@
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="sidebar" class="p-chat-user thematicLegend">
+    <div class="had-container">
+        <div class="card card_main p-fixed users-main card-block accordion-block">
+            <div class="accordion-box" id="single-open">
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-sm-9" style="padding-left:30px;">
+                        <span class="pcoded-micon"><i class="icofont icofont-info-square"></i></span>
+                        <span class="pcoded-mtext"> Thematic Legends</span>
+                    </div>
+                    <div class="col-sm-3 text-right">
+                        <span class="pcoded-badge label label-inverse-danger info-close-btn" id="btnClosethematicLegend"><i class="feather icon-close">X</i></span>
+                    </div>
+                </div>
+                <hr />
+                <div id="thematicLegendList">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
